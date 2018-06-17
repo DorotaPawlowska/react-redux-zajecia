@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
+
 import '../App.css';
 
-class Home extends Component {
+class Contact extends Component {
 
     render() {
         return (
@@ -14,6 +15,7 @@ class Home extends Component {
                 <button onClick={this.props.decrement}> substract one </button>
                 <hr/>
                 <button onClick={this.props.zeroing}> zero </button>
+                
                 <ul>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
@@ -36,4 +38,4 @@ const mapDispachToProps = dispatch => {
     };
 };
 
-export default connect (mapStateToProps, mapDispachToProps)(Home);
+export default connect (mapStateToProps, mapDispachToProps)(Contact);

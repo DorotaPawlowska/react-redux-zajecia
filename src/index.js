@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './index.css';
-import Home from './routes/Home';
+import MineRout from './routes/mineRout';
 import registerServiceWorker from './registerServiceWorker';
 
 const reducer = ( state = 0, action) => {
@@ -20,11 +20,14 @@ const reducer = ( state = 0, action) => {
     }
 };
 
-const store = createStore(reducer);
+const store = createStore(
+    reducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
     <Provider store={store}>
-        <Home />
+        <MineRout />
     </Provider>,
     document.getElementById('root')
 );
